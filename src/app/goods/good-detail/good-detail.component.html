@@ -1,0 +1,53 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      Good overview
+    </h4>
+  </div>
+  <div class="panel-body">
+    <ul>
+      <li>Title: {{good.title}}</li>
+      <li>Description: {{good.description}}</li>
+      <li>Category: {{good.category}}</li>
+      <li>Price: {{good.price}}</li>
+      <li>Available: {{good.available}}</li>
+    </ul>
+    <div *ngIf="good.comments.length">
+      <h4 class="panel-title">
+        Comments
+      </h4>
+      <ul>
+        <li *ngFor="let comment of good.comments">
+          {{comment}}
+        </li>
+      </ul>
+    </div>
+    <form *ngIf="good" (ngSubmit)="addComment()" id="task-form">
+      <div class="form-group">
+        <label for="comment">Add comment</label>
+        <input type="text"
+               class="form-control"
+               id="comment" name="comment"
+               placeholder="Comment"
+               required
+               [(ngModel)]="comment">
+      </div>
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="addToCart()">Add to cart
+      </button>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        form="task-form">Add comment
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="goBack()">Back
+      </button>
+    </form>
+  </div>
+</div>
+

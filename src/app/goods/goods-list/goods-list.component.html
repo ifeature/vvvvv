@@ -1,0 +1,12 @@
+<div class="container">
+  <div id="row">
+    <app-good
+      *ngFor='let good of goods'
+      [good]="good"
+      [class.edited]="isEdited(good)">
+    </app-good>
+  </div>
+</div>
+
+
+

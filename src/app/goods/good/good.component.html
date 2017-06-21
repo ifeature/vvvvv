@@ -1,0 +1,22 @@
+<div class="col-md-5 col-sm-4">
+  <div class="panel panel-default">
+    <div class="panel-heading">Task</div>
+    <div class="panel-body">
+      <ul>
+        <li>Title: {{good.title}}</li>
+        <li>Description: {{good.description}}</li>
+        <li>Category: {{good.category}}</li>
+        <li>Price: {{good.price}}</li>
+        <li>Available: {{good.available}}</li>
+      </ul>
+      <button class="btn btn-primary btn-sm"
+              (click)="view($event)">
+        View
+      </button>
+      <button class="btn btn-primary btn-sm"
+              (click)="addToCart($event)">
+        Add to cart
+      </button>
+    </div>
+  </div>
+</div>
